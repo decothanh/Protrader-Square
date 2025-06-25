@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProTrader Square - Hệ Sinh Thái Giao Dịch Tài Chính Thông Minh</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .text-gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .feature-icon { width: 60px; height: 60px; }
+        @media print {
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .no-print { display: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Section -->
+    <header class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-8">
+                <i class="fas fa-chart-line text-6xl mb-4"></i>
+                <h1 class="text-5xl font-bold mb-4">ProTrader Square</h1>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">Hệ Sinh Thái Giao Dịch Tài Chính Thông Minh</p>
+                <p class="text-lg opacity-80 mt-2">Dựa trên Nền Tảng Quản Trị Rủi Ro Cốt Lõi</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-white bg-opacity-20 rounded-lg p-6 backdrop-blur-sm">
+                    <i class="fas fa-fund text-3xl mb-3"></i>
+                    <h3 class="text-xl font-semibold mb-2">Fund Operation</h3>
+                    <p class="text-sm opacity-90">Quản lý quỹ chuyên nghiệp với đối tác chiến lược</p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-6 backdrop-blur-sm">
+                    <i class="fas fa-mobile-alt text-3xl mb-3"></i>
+                    <h3 class="text-xl font-semibold mb-2">SmartRiskTrader App</h3>
+                    <p class="text-sm opacity-90">Ứng dụng di động với AI quản trị rủi ro</p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-6 backdrop-blur-sm">
+                    <i class="fas fa-copy text-3xl mb-3"></i>
+                    <h3 class="text-xl font-semibold mb-2">Copy Trade Platform</h3>
+                    <p class="text-sm opacity-90">Nền tảng copy trade P2P đa sàn</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overview Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Tổng Quan Dự Án</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto">ProTrader Square là một hệ sinh thái giao dịch tài chính toàn diện, được xây dựng trên nền tảng quản trị rủi ro cốt lõi, nhằm tối ưu hóa hiệu suất đầu tư và bảo vệ vốn cho các nhà giao dịch và nhà đầu tư.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Giá Trị Cốt Lõi</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 rounded-full p-3 mr-4">
+                                <i class="fas fa-eye text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Minh Bạch</h4>
+                                <p class="text-gray-600">Hoàn toàn transparent trong mọi giao dịch</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-green-100 rounded-full p-3 mr-4">
+                                <i class="fas fa-chart-line text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Tập Trung Lợi Nhuận Hàng Ngày</h4>
+                                <p class="text-gray-600">Optimized daily profit focus</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-purple-100 rounded-full p-3 mr-4">
+                                <i class="fas fa-shield-alt text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Không Giữ Tiền Nhà Đầu Tư</h4>
+                                <p class="text-gray-600">Chỉ thông qua API và quy tắc minh bạch</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-red-100 rounded-full p-3 mr-4">
+                                <i class="fas fa-ban text-red-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Không Cung Cấp Dịch Vụ Quy Đổi</h4>
+                                <p class="text-gray-600">Không hỗ trợ chuyển đổi USDT ⇄ VND</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Thị Trường Mục Tiêu</h3>
+                    <div class="space-y-6">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-gradient mb-2">30M</div>
+                            <p class="text-gray-600">Trader Toàn Cầu</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-gradient mb-2">1,000</div>
+                            <p class="text-gray-600">Active Users (Giai đoạn 1)</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-gradient mb-2">36</div>
+                            <p class="text-gray-600">Tháng Cơ Hội Vàng tại Việt Nam</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fund Operation Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-fund text-blue-600 mr-3"></i>
+                    Mô Hình Hoạt Động Quỹ
+                </h2>
+                <p class="text-xl text-gray-600">Fund Operation với hệ thống quản trị rủi ro toàn diện</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-handshake text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Đối Tác Mục Tiêu</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-angel text-yellow-500 mr-3"></i>
+                            <span>Angel Investors (Chuyên gia quản trị rủi ro)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-bitcoin text-orange-500 mr-3"></i>
+                            <span>Crypto Lending Providers (USDT)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-exchange-alt text-green-500 mr-3"></i>
+                            <span>Forex Funds</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-shield-alt text-4xl text-green-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Quản Trị Rủi Ro</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-divide text-blue-500 mr-3"></i>
+                            <span>Phân Tách MDL/MDD</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-trophy text-yellow-500 mr-3"></i>
+                            <span>Xếp Hạng Trader</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-copy text-purple-500 mr-3"></i>
+                            <span>Private Copy Trade Model</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-flask text-4xl text-purple-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">L3 Trading Lab</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-graduation-cap text-blue-500 mr-3"></i>
+                            <span>Trading Job Program</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-code text-green-500 mr-3"></i>
+                            <span>DC7 Program Training</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-challenge text-red-500 mr-3"></i>
+                            <span>Trading Lab Challenge</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SmartRiskTrader App Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-mobile-alt text-green-600 mr-3"></i>
+                    SmartRiskTrader Mobile App
+                </h2>
+                <p class="text-xl text-gray-600">Ứng dụng di động với AI quản trị rủi ro thông minh</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Nền Tảng Đa Thiết Bị</h3>
+                    <div class="grid grid-cols-3 gap-4 mb-8">
+                        <div class="text-center bg-gray-50 rounded-lg p-4">
+                            <i class="fab fa-apple text-3xl text-gray-700 mb-2"></i>
+                            <p class="font-semibold">iOS</p>
+                        </div>
+                        <div class="text-center bg-gray-50 rounded-lg p-4">
+                            <i class="fab fa-android text-3xl text-green-600 mb-2"></i>
+                            <p class="font-semibold">Android</p>
+                        </div>
+                        <div class="text-center bg-gray-50 rounded-lg p-4">
+                            <i class="fas fa-globe text-3xl text-blue-600 mb-2"></i>
+                            <p class="font-semibold">Web</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 rounded-lg p-6">
+                        <h4 class="text-xl font-bold text-blue-800 mb-3">Mô Hình Kiếm Tiền</h4>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg text-gray-700">Đăng Ký Hàng Tháng:</span>
+                            <span class="text-2xl font-bold text-blue-600">~$20 USD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Quản Lý Tài Khoản Đa Sàn</h3>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-lg font-semibold text-gray-700 mb-3">
+                            <i class="fab fa-bitcoin text-orange-500 mr-2"></i>Crypto
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Binance</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MEXC</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Bybit</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">...</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-700 mb-3">
+                            <i class="fas fa-exchange-alt text-green-500 mr-2"></i>Forex
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Exness</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Risk Control Features -->
+            <div class="bg-gray-50 rounded-lg p-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">
+                    <i class="fas fa-robot text-blue-600 mr-3"></i>
+                    Hệ Thống Quản Trị Rủi Ro AI
+                </h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg p-6 text-center card-hover">
+                        <i class="fas fa-calculator text-3xl text-blue-600 mb-3"></i>
+                        <h4 class="font-semibold text-gray-800 mb-2">Lập Kế Hoạch & Phân Chia Vốn</h4>
+                        <p class="text-gray-600 text-sm">Planning & Split Capital</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 text-center card-hover">
+                        <i class="fas fa-calendar-day text-3xl text-red-600 mb-3"></i>
+                        <h4 class="font-semibold text-gray-800 mb-2">Kiểm Soát Thua Lỗ Hàng Ngày</h4>
+                        <p class="text-gray-600 text-sm">Max Daily Loss Control</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 text-center card-hover">
+                        <i class="fas fa-chart-line-down text-3xl text-orange-600 mb-3"></i>
+                        <h4 class="font-semibold text-gray-800 mb-2">Kiểm Soát Drawdown Tối Đa</h4>
+                        <p class="text-gray-600 text-sm">Max DrawDown Control</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 text-center card-hover">
+                        <i class="fas fa-stop-circle text-3xl text-red-600 mb-3"></i>
+                        <h4 class="font-semibold text-gray-800 mb-2">Tự Động Cắt Lỗ</h4>
+                        <p class="text-gray-600 text-sm">Auto Stop-loss Control</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 text-center card-hover">
+                        <i class="fas fa-expand-arrows-alt text-3xl text-green-600 mb-3"></i>
+                        <h4 class="font-semibold text-gray-800 mb-2">Tự Động Điều Chỉnh Vị Thế</h4>
+                        <p class="text-gray-600 text-sm">Auto Position Resize</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 text-center card-hover">
+                        <i class="fas fa-exclamation-triangle text-3xl text-yellow-600 mb-3"></i>
+                        <h4 class="font-semibold text-gray-800 mb-2">Cảnh Báo Tỷ Lệ Sharpe</h4>
+                        <p class="text-gray-600 text-sm">Sharp Ratio Warning</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Optional Features -->
+            <div class="mt-12 grid lg:grid-cols-2 gap-8">
+                <div class="bg-blue-50 rounded-lg p-8">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-6">
+                        <i class="fas fa-signal text-blue-600 mr-3"></i>
+                        Signal Trading
+                    </h3>
+                    <p class="text-gray-700 mb-4">1 click để tạo lệnh hoàn chỉnh</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-2"></i>
+                            <span>Entry Limit</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-2"></i>
+                            <span>Stop Loss</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-2"></i>
+                            <span>Take Profit</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-green-50 rounded-lg p-8">
+                    <h3 class="text-2xl font-bold text-green-800 mb-6">
+                        <i class="fas fa-crosshairs text-green-600 mr-3"></i>
+                        Spot Sniper
+                    </h3>
+                    <p class="text-gray-700 mb-4">Rải lệnh Spot thông minh</p>
+                    <div class="bg-white rounded p-4">
+                        <p class="text-sm text-gray-600">
+                            <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                            Không bị khóa Margin khi rải lệnh Spot
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Copy Trade Platform Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-copy text-purple-600 mr-3"></i>
+                    Copy Trade Platform
+                </h2>
+                <p class="text-xl text-gray-600">Nền tảng copy trade P2P với công cụ quản trị rủi ro chuyên sâu</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Đặc Điểm Nền Tảng</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center bg-white rounded-lg p-4 shadow">
+                            <div class="bg-purple-100 rounded-full p-3 mr-4">
+                                <i class="fas fa-users text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Copy Trade P2P</h4>
+                                <p class="text-gray-600 text-sm">Giao dịch ngang hàng trực tiếp</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center bg-white rounded-lg p-4 shadow">
+                            <div class="bg-blue-100 rounded-full p-3 mr-4">
+                                <i class="fas fa-crown text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">100% Trade Leaders</h4>
+                                <p class="text-gray-600 text-sm">Đều cài đặt SmartRisk Trader app</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center bg-white rounded-lg p-4 shadow">
+                            <div class="bg-green-100 rounded-full p-3 mr-4">
+                                <i class="fas fa-mobile-alt text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Multi-App Integration</h4>
+                                <p class="text-gray-600 text-sm">Tích hợp đa ứng dụng</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Hỗ Trợ Đa Sàn</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-700 mb-3 flex items-center">
+                                <i class="fab fa-bitcoin text-orange-500 mr-2"></i>Crypto
+                            </h4>
+                            <p class="text-gray-600">Các sàn giao dịch tiền điện tử hàng đầu</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-700 mb-3 flex items-center">
+                                <i class="fas fa-coins text-yellow-500 mr-2"></i>Vàng
+                            </h4>
+                            <p class="text-gray-600">Thị trường vàng quốc tế</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-700 mb-3 flex items-center">
+                                <i class="fas fa-exchange-alt text-green-500 mr-2"></i>Forex
+                            </h4>
+                            <p class="text-gray-600">Thị trường ngoại hối</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 bg-gradient-to-r from-purple-100 to-blue-100 rounded-lg p-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Điểm Khác Biệt</h4>
+                        <p class="text-gray-700 text-sm">Cung cấp các công cụ quản trị rủi ro rất sâu và chuyên nghiệp cho cả Trade Leaders và Copy Trade Accounts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vietnam Market Opportunity -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-flag text-red-600 mr-3"></i>
+                    Tận Dụng Cơ Hội Thị Trường Việt Nam
+                </h2>
+                <p class="text-xl text-gray-600">Thời cơ vàng trong 36 tháng tới</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="bg-red-50 rounded-lg p-8 text-center card-hover">
+                    <i class="fas fa-door-open text-4xl text-red-600 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Chính Sách Mở Cửa</h3>
+                    <p class="text-gray-600">Việt Nam đang mở rộng thị trường tài chính với các chính sách hỗ trợ</p>
+                </div>
+                
+                <div class="bg-yellow-50 rounded-lg p-8 text-center card-hover">
+                    <i class="fas fa-chart-line text-4xl text-yellow-600 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Nhu Cầu Đầu Tư Tăng Cao</h3>
+                    <p class="text-gray-600">Nhà đầu tư cá nhân và tổ chức tìm kiếm giải pháp quản trị rủi ro</p>
+                </div>
+                
+                <div class="bg-blue-50 rounded-lg p-8 text-center card-hover">
+                    <i class="fas fa-rocket text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Công Nghệ Fintech Phát Triển</h3>
+                    <p class="text-gray-600">Môi trường thuận lợi cho các giải pháp công nghệ tài chính</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Advantages -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-trophy text-yellow-600 mr-3"></i>
+                    Lợi Thế Cạnh Tranh
+                </h2>
+                <p class="text-xl text-gray-600">Những điểm mạnh vượt trội của ProTrader Square</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shield-alt text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Quản Trị Rủi Ro Toàn Diện</h3>
+                    </div>
+                    <p class="text-gray-600 text-center">Hệ thống quản trị rủi ro đa lớp với AI và tự động hóa hoàn toàn</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-eye text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Minh Bạch Tuyệt Đối</h3>
+                    </div>
+                    <p class="text-gray-600 text-center">Không giữ tiền khách hàng, chỉ thông qua API với quy tắc rõ ràng</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-layer-group text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Đa Sàn Giao Dịch</h3>
+                    </div>
+                    <p class="text-gray-600 text-center">Tích hợp nhiều sàn giao dịch hàng đầu thế giới</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-robot text-2xl text-red-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Công Nghệ Tiên Tiến</h3>
+                    </div>
+                    <p class="text-gray-600 text-center">AI và machine learning trong quản trị rủi ro thông minh</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="bg-yellow-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-2xl text-yellow-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Cộng Đồng Trader Chất Lượng</h3>
+                    </div>
+                    <p class="text-gray-600 text-center">Xây dựng hệ sinh thái trader chuyên nghiệp với chương trình đào tạo</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="bg-indigo-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-expand-arrows-alt text-2xl text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Khả Năng Mở Rộng</h3>
+                    </div>
+                    <p class="text-gray-600 text-center">Mô hình KOL + Affiliate với khả năng scale toàn cầu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Economic Impact -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-chart-bar text-green-600 mr-3"></i>
+                    Tác Động Kinh Tế
+                </h2>
+                <p class="text-xl text-gray-600">Đóng góp tích cực cho nền kinh tế và xã hội</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 rounded-full p-3 mr-4 mt-1">
+                            <i class="fas fa-briefcase text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Tạo Việc Làm</h3>
+                            <p class="text-gray-600">Chương trình đào tạo trader chuyên nghiệp, tạo ra nhiều cơ hội việc làm chất lượng cao trong lĩnh vực tài chính</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="bg-green-100 rounded-full p-3 mr-4 mt-1">
+                            <i class="fas fa-graduation-cap text-green-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Nâng Cao Kỹ Năng Tài Chính</h3>
+                            <p class="text-gray-600">Giáo dục và đào tạo cộng đồng về quản trị rủi ro và giao dịch tài chính chuyên nghiệp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-purple-100 rounded-full p-3 mr-4 mt-1">
+                            <i class="fas fa-globe text-purple-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Thu Hút Đầu Tư Nước Ngoài</h3>
+                            <p class="text-gray-600">Mô hình minh bạch và quản trị rủi ro tốt thu hút các nhà đầu tư quốc tế</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="bg-red-100 rounded-full p-3 mr-4 mt-1">
+                            <i class="fas fa-rocket text-red-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Phát Triển Công Nghệ Fintech</h3>
+                            <p class="text-gray-600">Đóng góp vào hệ sinh thái fintech Việt Nam với công nghệ AI tiên tiến</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revenue Model Chart -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-dollar-sign text-green-600 mr-3"></i>
+                    Mô Hình Doanh Thu
+                </h2>
+                <p class="text-xl text-gray-600">Đa dạng nguồn thu bền vững</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <canvas id="revenueChart" style="height: 400px;"></canvas>
+            </div>
+
+            <div class="mt-8 grid md:grid-cols-3 gap-6">
+                <div class="bg-blue-50 rounded-lg p-6 text-center">
+                    <i class="fas fa-handshake text-3xl text-blue-600 mb-3"></i>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Profit Share (Fund)</h3>
+                    <p class="text-gray-600 text-sm">Chia sẻ lợi nhuận từ hoạt động quỹ</p>
+                </div>
+                
+                <div class="bg-green-50 rounded-lg p-6 text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-green-600 mb-3"></i>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Subscription (App)</h3>
+                    <p class="text-gray-600 text-sm">$20/tháng từ SmartRiskTrader App</p>
+                </div>
+                
+                <div class="bg-purple-50 rounded-lg p-6 text-center">
+                    <i class="fas fa-copy text-3xl text-purple-600 mb-3"></i>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Profit Share (Copy Trade)</h3>
+                    <p class="text-gray-600 text-sm">Chia sẻ lợi nhuận từ Copy Trade Platform</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-road text-blue-600 mr-3"></i>
+                    Lộ Trình Phát Triển
+                </h2>
+                <p class="text-xl text-gray-600">Kế hoạch triển khai trong 36 tháng</p>
+            </div>
+
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-300"></div>
+                
+                <div class="space-y-12">
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-blue-50 rounded-lg p-6">
+                                <h3 class="text-xl font-bold text-blue-800 mb-2">Giai Đoạn 1 (0-6 tháng)</h3>
+                                <ul class="text-gray-700 text-sm space-y-1">
+                                    <li>• Phát triển SmartRiskTrader App MVP</li>
+                                    <li>• Mục tiêu 1,000 active users</li>
+                                    <li>• Xây dựng L3 Trading Lab</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="w-8 h-8 bg-green-600 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="w-1/2 pl-8">
+                            <div class="bg-green-50 rounded-lg p-6">
+                                <h3 class="text-xl font-bold text-green-800 mb-2">Giai Đoạn 2 (6-18 tháng)</h3>
+                                <ul class="text-gray-700 text-sm space-y-1">
+                                    <li>• Launch Copy Trade Platform</li>
+                                    <li>• Mở rộng sang các sàn Forex</li>
+                                    <li>• Chương trình KOL & Affiliate</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-purple-50 rounded-lg p-6">
+                                <h3 class="text-xl font-bold text-purple-800 mb-2">Giai Đoạn 3 (18-36 tháng)</h3>
+                                <ul class="text-gray-700 text-sm space-y-1">
+                                    <li>• Fund Operation hoàn chỉnh</li>
+                                    <li>• Mở rộng thị trường quốc tế</li>
+                                    <li>• IPO hoặc tìm kiếm đối tác chiến lược</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 bg-purple-600 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-4">Sẵn Sàng Tham Gia Hành Trình?</h2>
+            <p class="text-xl mb-8 opacity-90">ProTrader Square - Hệ sinh thái giao dịch tài chính thông minh của tương lai</p>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <i class="fas fa-shield-alt text-4xl mb-3"></i>
+                    <h3 class="text-xl font-semibold mb-2">Bảo Mật Tuyệt Đối</h3>
+                    <p class="opacity-90">Quản trị rủi ro AI tiên tiến</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-chart-line text-4xl mb-3"></i>
+                    <h3 class="text-xl font-semibold mb-2">Lợi Nhuận Tối Ưu</h3>
+                    <p class="opacity-90">Tập trung daily profit</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-globe text-4xl mb-3"></i>
+                    <h3 class="text-xl font-semibold mb-2">Tầm Nhìn Toàn Cầu</h3>
+                    <p class="opacity-90">Mở rộng thị trường quốc tế</p>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-white bg-opacity-20 rounded-lg p-8 backdrop-blur-sm max-w-2xl mx-auto">
+                <h3 class="text-2xl font-bold mb-4">ProTrader Square</h3>
+                <p class="text-lg opacity-90 mb-4">
+                    Không chỉ là một nền tảng giao dịch, mà là một <strong>hệ sinh thái tài chính hoàn chỉnh</strong> 
+                    với trọng tâm là <strong>quản trị rủi ro thông minh</strong>, đáp ứng nhu cầu ngày càng cao 
+                    của thị trường tài chính hiện đại.
+                </p>
+                <div class="text-sm opacity-80">
+                    <p>🇻🇳 Tận dụng cơ hội mở cửa thị trường tài chính Việt Nam trong 36 tháng tới</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Revenue Model Chart
+        const ctx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Fund Profit Share', 'App Subscription', 'Copy Trade Profit Share', 'Trading Lab'],
+                datasets: [{
+                    data: [40, 30, 25, 5],
+                    backgroundColor: [
+                        '#3B82F6',
+                        '#10B981',
+                        '#8B5CF6',
+                        '#F59E0B'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.label + ': ' + context.parsed + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Smooth scrolling for better PDF export
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add any additional JavaScript for enhanced functionality
+        });
+    </script>
+</body>
+</html>
